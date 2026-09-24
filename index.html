@@ -59,19 +59,9 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#about" class="hover:text-brand-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
-                        <a href="#hardware" class="hover:text-brand-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Hardware</a>
-                        <a href="#software" class="hover:text-brand-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Software</a>
+                        <a href="#hardware" class="hover:text-brand-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Hardware Projects</a>
                         <a href="#contact" class="bg-brand-500 text-white hover:bg-brand-600 px-4 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
                     </div>
-                </div>
-                <!-- Mobile menu button (visual only for this static version) -->
-                <div class="-mr-2 flex md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>
@@ -90,117 +80,62 @@
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="#hardware" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-medium py-3 px-6 rounded-lg transition-colors duration-200">
-                        View Hardware
-                    </a>
-                    <a href="#software" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-medium py-3 px-6 rounded-lg transition-colors duration-200">
-                        View Software
+                        View Project
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="hardware" class="py-20 border-t border-slate-800">
+        <section id="hardware" class="py-20 border-t border-slate-800 bg-slate-800/20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-12">
-                    <h2 class="text-3xl font-bold text-white mb-4">Hardware Projects</h2>
+                    <h2 class="text-3xl font-bold text-white mb-4">Featured Hardware Project</h2>
                     <div class="h-1 w-20 bg-brand-500 rounded"></div>
                     <p class="mt-4 text-slate-400 max-w-2xl">Mechanical design, physical prototyping, and robotic integration.</p>
                 </div>
 
-                <!-- CSS Grid for Hardware Projects -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Featured Project Card (Full Width) -->
+                <div class="bg-slate-800/40 rounded-xl overflow-hidden border border-slate-700 shadow-lg flex flex-col md:flex-row">
+                    <!-- Image Placeholder (We can update this when you provide slides) -->
+                    <div class="w-full md:w-5/12 bg-slate-900 min-h-[300px] flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-700 relative">
+                        <img src="https://placehold.co/800x600/0f172a/94a3b8?text=Project+Images+Coming+Soon" alt="da Vinci Xi Adapter" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                    </div>
                     
-                    <!-- Project Card 1 -->
-                    <div class="bg-slate-800/40 rounded-xl overflow-hidden border border-slate-700 shadow-lg hover:-translate-y-1 hover:shadow-brand-500/10 hover:border-slate-600 transition-all duration-300 flex flex-col">
-                        <img src="https://placehold.co/600x400/0f172a/94a3b8?text=da+Vinci+Adapter" alt="da Vinci Xi Adapter" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-xl font-bold text-white mb-2">da Vinci Xi Tool Adapter & Motor Pack</h3>
-                            <p class="text-slate-400 text-sm mb-4 flex-grow">Designed and fabricated a custom tool adapter to integrate surgical instruments with a Universal Robots (UR5) arm. Integrated a customized motor pack for precise actuation.</p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2 py-1 text-xs font-medium bg-slate-900 text-emerald-400 border border-emerald-900 rounded">SolidWorks</span>
-                                <span class="px-2 py-1 text-xs font-medium bg-slate-900 text-emerald-400 border border-emerald-900 rounded">UR5 Arm</span>
-                                <span class="px-2 py-1 text-xs font-medium bg-slate-900 text-emerald-400 border border-emerald-900 rounded">Dynamixel Servos</span>
-                            </div>
-                            <a href="#" class="text-emerald-400 hover:text-emerald-300 font-medium text-sm inline-flex items-center group mt-auto">
-                                View Project 
-                                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </a>
+                    <div class="p-8 md:p-10 w-full md:w-7/12 flex flex-col justify-center">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">da Vinci Xi Tool Adapter & Motor Pack</h3>
+                        <p class="text-slate-300 mb-6 leading-relaxed">
+                            Designed and fabricated a custom tool adapter to integrate surgical instruments with a Universal Robots (UR5) arm. Integrated a customized motor pack for precise actuation in an ARPA-H funded partial nephrectomy project.
+                        </p>
+                        
+                        <h4 class="text-white font-semibold mb-3 text-sm tracking-wide uppercase">Engineering Drawings (PDF)</h4>
+                        <ul class="mb-8 space-y-3">
+                            <li>
+                                <a href="Outer_shaft_Drawing_metric.pdf" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center transition-colors">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg> 
+                                    Outer Shaft (Metric) Drawing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Inner_shaft_Drawing_metric.pdf" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center transition-colors">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg> 
+                                    Inner Shaft (Metric) Drawing
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="px-3 py-1 text-xs font-semibold tracking-wide bg-slate-900 text-emerald-400 border border-emerald-900/50 rounded-full">SolidWorks</span>
+                            <span class="px-3 py-1 text-xs font-semibold tracking-wide bg-slate-900 text-emerald-400 border border-emerald-900/50 rounded-full">UR5 Arm</span>
+                            <span class="px-3 py-1 text-xs font-semibold tracking-wide bg-slate-900 text-emerald-400 border border-emerald-900/50 rounded-full">Dynamixel Servos</span>
+                            <span class="px-3 py-1 text-xs font-semibold tracking-wide bg-slate-900 text-emerald-400 border border-emerald-900/50 rounded-full">ROS 2</span>
                         </div>
                     </div>
-
-                    <!-- Project Card 2 (Placeholder) -->
-                    <div class="bg-slate-800/40 rounded-xl overflow-hidden border border-slate-700 shadow-lg hover:-translate-y-1 hover:shadow-brand-500/10 hover:border-slate-600 transition-all duration-300 flex flex-col">
-                        <img src="https://placehold.co/600x400/0f172a/94a3b8?text=Hardware+Project+2" alt="Hardware Project 2" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-xl font-bold text-white mb-2">Additional Hardware Project</h3>
-                            <p class="text-slate-400 text-sm mb-4 flex-grow">Details about another mechanical design, 3D printing, or robotic fabrication project go here.</p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2 py-1 text-xs font-medium bg-slate-900 text-emerald-400 border border-emerald-900 rounded">CAD</span>
-                                <span class="px-2 py-1 text-xs font-medium bg-slate-900 text-emerald-400 border border-emerald-900 rounded">Prototyping</span>
-                            </div>
-                            <a href="#" class="text-emerald-400 hover:text-emerald-300 font-medium text-sm inline-flex items-center group mt-auto">
-                                View Project 
-                                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="software" class="bg-slate-800/50 py-20 border-y border-slate-800">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-12">
-                    <h2 class="text-3xl font-bold text-white mb-4">Software Projects</h2>
-                    <div class="h-1 w-20 bg-brand-500 rounded"></div>
-                    <p class="mt-4 text-slate-400 max-w-2xl">Computer vision, deep learning, and advanced kinematics.</p>
-                </div>
-
-                <!-- CSS Grid for Software Projects -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Project Card 1 -->
-                    <div class="bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-lg hover:-translate-y-1 hover:shadow-brand-500/10 hover:border-slate-700 transition-all duration-300 flex flex-col">
-                        <img src="https://placehold.co/600x400/1e293b/94a3b8?text=BraTioUS+AI" alt="BraTioUS" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-xl font-bold text-white mb-2">BraTioUS Segmentation</h3>
-                            <p class="text-slate-400 text-sm mb-4 flex-grow">Intraoperative ultrasound image segmentation utilizing advanced neural network architectures to assist in surgical navigation and tumor identification.</p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2 py-1 text-xs font-medium bg-slate-800 text-brand-400 rounded">YOLO</span>
-                                <span class="px-2 py-1 text-xs font-medium bg-slate-800 text-brand-400 rounded">nnU-Net</span>
-                                <span class="px-2 py-1 text-xs font-medium bg-slate-800 text-brand-400 rounded">MedSAM2</span>
-                            </div>
-                            <a href="#" class="text-brand-400 hover:text-brand-300 font-medium text-sm inline-flex items-center group mt-auto">
-                                View Project 
-                                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 2 -->
-                    <div class="bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-lg hover:-translate-y-1 hover:shadow-brand-500/10 hover:border-slate-700 transition-all duration-300 flex flex-col">
-                        <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Probe+Kinematics" alt="Kinematics" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="text-xl font-bold text-white mb-2">Continuum Probe Kinematics</h3>
-                            <p class="text-slate-400 text-sm mb-4 flex-grow">Formulated kinematic models for flexible continuum surgical probes. Applied advanced mathematical modeling alongside deep learning frameworks for trajectory prediction.</p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-2 py-1 text-xs font-medium bg-slate-800 text-brand-400 rounded">Lie Group Theory</span>
-                                <span class="px-2 py-1 text-xs font-medium bg-slate-800 text-brand-400 rounded">PyTorch</span>
-                                <span class="px-2 py-1 text-xs font-medium bg-slate-800 text-brand-400 rounded">MATLAB</span>
-                            </div>
-                            <a href="#" class="text-brand-400 hover:text-brand-300 font-medium text-sm inline-flex items-center group mt-auto">
-                                View Project 
-                                <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="contact" class="bg-slate-950 border-t border-slate-800 py-12 mt-12">
+    <footer id="contact" class="bg-slate-950 border-t border-slate-800 py-12 mt-auto">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-2xl font-bold text-white mb-6">Get In Touch</h2>
             <p class="text-slate-400 mb-8 max-w-xl mx-auto">
@@ -209,11 +144,11 @@
             
             <div class="flex justify-center space-x-6 mb-8">
                 <!-- Email -->
-                <a href="mailto:your.email@example.com" class="text-slate-400 hover:text-brand-400 transition-colors" aria-label="Email">
+                <a href="mailto:dmcdono7@jh.edu" class="text-slate-400 hover:text-brand-400 transition-colors" aria-label="Email">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                 </a>
                 <!-- GitHub -->
-                <a href="https://github.com/yourusername" target="_blank" class="text-slate-400 hover:text-brand-400 transition-colors" aria-label="GitHub">
+                <a href="https://github.com/douglasmcdonough" target="_blank" class="text-slate-400 hover:text-brand-400 transition-colors" aria-label="GitHub">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
                     </svg>
@@ -227,7 +162,7 @@
             </div>
             
             <p class="text-sm text-slate-500">
-                &copy; <script>document.write(new Date().getFullYear())</script> Douglas McDonough. Built for the web.
+                &copy; <script>document.write(new Date().getFullYear())</script> Douglas McDonough.
             </p>
         </div>
     </footer>
