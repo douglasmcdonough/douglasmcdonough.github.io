@@ -96,16 +96,26 @@
 
                 <!-- Featured Project Card (Full Width) -->
                 <div class="bg-slate-800/40 rounded-xl overflow-hidden border border-slate-700 shadow-lg flex flex-col md:flex-row">
-                    <!-- Image Placeholder (We can update this when you provide slides) -->
-                    <div class="w-full md:w-5/12 bg-slate-900 min-h-[300px] flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-700 relative">
-                        <img src="https://placehold.co/800x600/0f172a/94a3b8?text=Project+Images+Coming+Soon" alt="da Vinci Xi Adapter" class="absolute inset-0 w-full h-full object-cover opacity-60">
+                    <!-- Image Area -->
+                    <div class="w-full md:w-5/12 bg-slate-900 min-h-[400px] flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-700 relative overflow-hidden">
+                        <!-- Replaced placeholder with the actual slide image. Ensure 'davinci_adapter.jpg' is in your folder! -->
+                        <img src="davinci_adapter.jpg" alt="da Vinci Xi Adapter assembled on UR5 arm" class="absolute inset-0 w-full h-full object-cover">
                     </div>
                     
                     <div class="p-8 md:p-10 w-full md:w-7/12 flex flex-col justify-center">
                         <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">da Vinci Xi Tool Adapter & Motor Pack</h3>
+                        
                         <p class="text-slate-300 mb-6 leading-relaxed">
-                            Designed and fabricated a custom tool adapter to integrate surgical instruments with a Universal Robots (UR5) arm. Integrated a customized motor pack for precise actuation in an ARPA-H funded partial nephrectomy project.
+                            Redesigned a modular tool adapter for an ARPA-H funded partial nephrectomy project to integrate da Vinci Xi surgical instruments with a Universal Robots (UR5) arm. 
                         </p>
+
+                        <h4 class="text-white font-semibold mb-3 text-sm tracking-wide uppercase border-b border-slate-700 pb-2">Key Engineering Upgrades</h4>
+                        <ul class="text-slate-300 mb-8 space-y-2 list-disc pl-5">
+                            <li><strong>Actuation Upgrade:</strong> Transitioned to Dynamixel XC330-M288-T motors, achieving a 72% reduction in size and 58% reduction in weight while increasing stall torque to 1.5 Nm.</li>
+                            <li><strong>Tool Engagement:</strong> Incorporated 3mm stroke spring plungers on the inner shaft and D-profile cuts for set screws to facilitate rapid, secure tool attachment.</li>
+                            <li><strong>Secure Attachment:</strong> Integrated snap clips and star knobs to rigidly maintain the precise positioning of the surgical tool tip during teleoperation.</li>
+                            <li><strong>ROS2 Control:</strong> Developed a multi-modal control system including Current-Based Homing and Joystick Teleoperation using custom coupling matrices.</li>
+                        </ul>
                         
                         <h4 class="text-white font-semibold mb-3 text-sm tracking-wide uppercase">Engineering Drawings (PDF)</h4>
                         <ul class="mb-8 space-y-3">
