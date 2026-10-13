@@ -1,188 +1,124 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Douglas McDonough - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            400: '#38bdf8', // Light blue accent
-                            500: '#0ea5e9', // Primary brand color
-                            600: '#0284c7', // Darker brand for hover states
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Custom scrollbar for a polished look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155; 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569; 
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080e1a">
+  <meta name="description" content="Douglas McDonough — engineering portfolio featuring medical robotics, mechanical design, robotic control, and software projects.">
+  <title>Douglas McDonough | Medical Robotics Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="projects.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
-<body class="bg-slate-900 text-slate-300 antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
+<body>
+  <div class="page-orb page-orb-one" aria-hidden="true"></div>
+  <div class="page-orb page-orb-two" aria-hidden="true"></div>
 
-    <nav class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-xl font-bold text-white tracking-tight hover:text-brand-400 transition-colors">
-                        Douglas McDonough
-                    </a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#about" class="hover:text-brand-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
-                        <a href="#hardware" class="hover:text-brand-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">Hardware Projects</a>
-                        <a href="#contact" class="bg-brand-500 text-white hover:bg-brand-600 px-4 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
-                    </div>
-                </div>
-            </div>
+  <header class="site-header">
+    <div class="container nav-content">
+      <a href="#top" class="brand" aria-label="Douglas McDonough home">
+        <span class="brand-monogram">DM<span class="brand-period">.</span></span>
+        <span class="brand-name">DOUGLAS <strong>MCDONOUGH</strong><span class="brand-descriptor">ENGINEERING PORTFOLIO</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-contact">Let's connect <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- EDIT YOUR INTRODUCTION HERE. All PROJECT text is in projects.js. -->
+    <section class="hero container" id="about" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> MECHANICAL ENGINEERING / MEDICAL ROBOTICS</div>
+        <p class="hero-intro">Hi, I'm Douglas McDonough.</p>
+        <h1 id="hero-title">Building robotics<br>from <span class="gradient-text">mechanism</span><br>to <span class="gradient-text">motion.</span></h1>
+        <p class="hero-description">I'm an MSE student in Mechanical Engineering at Johns Hopkins University, specializing in medical robotics. My research supports an ARPA-H-funded effort in supervised autonomous robotic renal tumor resection — spanning custom robotic adapters and deep learning for imitation learning.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore projects <span aria-hidden="true">↘</span></a>
+          <a class="button button-outline" href="mailto:dmcdono7@jh.edu">Get in touch <span aria-hidden="true">↗</span></a>
         </div>
-    </nav>
-
-    <main class="flex-grow">
-        <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-            <div class="max-w-3xl">
-                <h2 class="text-brand-400 font-semibold tracking-wide uppercase text-sm mb-3">Work in Progress as of 9/28/26!</h2>
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-                    I'm Douglas McDonough.<br>
-                    <span class="text-slate-400">Medical Robotics Engineer.</span>
-                </h1>
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed">
-                    I am an MSE student in Mechanical Engineering at Johns Hopkins University specializing in medical robotics. My research currently supports an ARPA-H grant for supervised autonomous robotic renal tumor resection. This includes designing and constructing custom robotic adapters to developing deep learning models for imitation learning.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#hardware" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-medium py-3 px-6 rounded-lg transition-colors duration-200">
-                        View Project
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="hardware" class="py-20 border-t border-slate-800 bg-slate-800/20">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-12">
-                    <h2 class="text-3xl font-bold text-white mb-4">Featured Hardware Project</h2>
-                    <div class="h-1 w-20 bg-brand-500 rounded"></div>
-                    <p class="mt-4 text-slate-400 max-w-2xl">Mechanical design, physical prototyping, and robotic integration.</p>
-                </div>
-
-                <!-- Featured Project Card (Full Width) -->
-                <div class="bg-slate-800/40 rounded-xl overflow-hidden border border-slate-700 shadow-lg flex flex-col md:flex-row">
-                    <!-- Image Area -->
-                    <div class="w-full md:w-5/12 bg-slate-900 min-h-[400px] flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-700 relative overflow-hidden">
-                        <!-- Replaced placeholder with the actual slide image. Ensure 'davinci_adapter.jpg' is in your folder! -->
-                        <img src="davinci_adapter.jpg" alt="da Vinci Xi Adapter assembled on UR5 arm" class="absolute inset-0 w-full h-full object-cover">
-                    </div>
-                    
-                    <div class="p-8 md:p-10 w-full md:w-7/12 flex flex-col justify-center">
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">da Vinci Xi Tool Adapter & Motor Pack</h3>
-                        
-                        <p class="text-slate-300 mb-6 leading-relaxed">
-                            Redesigned a modular tool adapter for an ARPA-H funded partial nephrectomy project to integrate da Vinci Xi surgical instruments with a Universal Robots (UR5) arm. 
-                        </p>
-
-                        <h4 class="text-white font-semibold mb-3 text-sm tracking-wide uppercase border-b border-slate-700 pb-2">Key Engineering Upgrades</h4>
-                        <ul class="text-slate-300 mb-8 space-y-2 list-disc pl-5">
-                            <li><strong>Actuation Upgrade:</strong> Incorporated Dynamixel XC330-M288-T motors, allowing current based position control for automatic homing.</li>
-                            <li><strong>Tool Engagement:</strong> Incorporated 3mm stroke spring plungers on the inner shaft and D-profile cuts for set screws to facilitate rapid, secure tool attachment.</li>
-                            <li><strong>Secure Attachment:</strong> Integrated snap clips and star knobs to rigidly maintain the precise positioning of the surgical tool tip during teleoperation.</li>
-                            <li><strong>ROS2 Control:</strong> Developed a multi-modal control system including Current-Based Homing and Joystick Teleoperation using custom coupling matrices.</li>
-                        </ul>
-                        
-                        <h4 class="text-white font-semibold mb-3 text-sm tracking-wide uppercase">Engineering Drawings (PDF)</h4>
-                        <ul class="mb-8 space-y-3">
-                            <li>
-                                <a href="Outer_shaft_Drawing_metric.pdf" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center transition-colors">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg> 
-                                    Outer Shaft (Metric) Drawing
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Inner_shaft_Drawing_metric.pdf" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center transition-colors">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg> 
-                                    Inner Shaft (Metric) Drawing
-                                </a>
-                            </li>
-			    <li>
-                                <a href="presentation.pdf" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center transition-colors">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                                    Presentation File
-                                </a>
-                            </li>
-
-                        </ul>
-
-                        <div class="flex flex-wrap gap-2 mt-auto">
-                            <span class="px-3 py-1 text-xs font-semibold tracking-wide bg-slate-900 text-emerald-400 border border-emerald-900/50 rounded-full">SolidWorks</span>
-                            <span class="px-3 py-1 text-xs font-semibold tracking-wide bg-slate-900 text-emerald-400 border border-emerald-900/50 rounded-full">UR5 Arm</span>
-                            <span class="px-3 py-1 text-xs font-semibold tracking-wide bg-slate-900 text-emerald-400 border border-emerald-900/50 rounded-full">Dynamixel Servos</span>
-                            <span class="px-3 py-1 text-xs font-semibold tracking-wide bg-slate-900 text-emerald-400 border border-emerald-900/50 rounded-full">ROS 2</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer id="contact" class="bg-slate-950 border-t border-slate-800 py-12 mt-auto">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl font-bold text-white mb-6">Get In Touch</h2>
-            <p class="text-slate-400 mb-8 max-w-xl mx-auto">
-                I'm currently looking for new opportunities in medical robotics and mechanical engineering. Always open to connect!
-            </p>
-            
-            <div class="flex justify-center space-x-6 mb-8">
-                <!-- Email -->
-                <a href="mailto:dmcdono7@jh.edu" class="text-slate-400 hover:text-brand-400 transition-colors" aria-label="Email">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                </a>
-                <!-- GitHub -->
-                <a href="https://github.com/douglasmcdonough" target="_blank" class="text-slate-400 hover:text-brand-400 transition-colors" aria-label="GitHub">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-                <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/dmcdonough2" target="_blank" class="text-slate-400 hover:text-brand-400 transition-colors" aria-label="LinkedIn">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-            </div>
-            
-            <p class="text-sm text-slate-500">
-                &copy; <script>document.write(new Date().getFullYear())</script> Douglas McDonough.
-            </p>
+        <div class="hero-micro"><span class="micro-line"></span> DESIGN  <span class="micro-separator">/</span>  BUILD  <span class="micro-separator">/</span>  CONTROL</div>
+      </div>
+      <aside class="hero-visual" aria-label="Engineering focus overview">
+        <div class="visual-topline"><span>FIELD NOTES // 001</span><span class="corner-mark">＋</span></div>
+        <div class="schematic" aria-hidden="true">
+          <div class="schematic-grid"></div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit orbit-three"></div>
+          <div class="schematic-cross cross-one">+</div>
+          <div class="schematic-cross cross-two">+</div>
+          <div class="schematic-center"><span>H</span><span class="schematic-mid">↔</span><span>S</span></div>
+          <div class="schematic-caption caption-left">HARDWARE</div>
+          <div class="schematic-caption caption-right">SOFTWARE</div>
+          <div class="schematic-coordinate">X: 004.02<br>Y: 003.07</div>
         </div>
-    </footer>
+        <div class="visual-bottom">
+          <div><span class="field-label">CURRENT FOCUS</span><strong>Medical robotics</strong></div>
+          <div><span class="field-label">EDUCATION</span><strong>Johns Hopkins · MSE</strong></div>
+        </div>
+      </aside>
+    </section>
 
+    <section class="work-section" id="projects" aria-labelledby="work-heading">
+      <div class="container work-container">
+        <div class="section-prelude">
+          <div><p class="section-kicker">02 / SELECTED WORK</p><h2 id="work-heading">Project portfolio<span class="brand-period">.</span></h2></div>
+          <p>Explore the physical systems and the software behind them. Select a category to switch projects.</p>
+        </div>
+
+        <div class="work-layout">
+          <aside class="work-sidebar" aria-label="Project categories">
+            <p class="sidebar-label">BROWSE WORK</p>
+            <div class="category-switcher" role="group" aria-label="Select project category">
+              <button type="button" class="category-button active" data-category="hardware" aria-pressed="true">
+                <span class="category-symbol" aria-hidden="true">▧</span>
+                <span class="category-copy"><strong>Hardware</strong><small>Design & fabrication</small></span>
+                <span class="category-count" id="hardware-count">04</span>
+              </button>
+              <button type="button" class="category-button" data-category="software" aria-pressed="false">
+                <span class="category-symbol software-symbol" aria-hidden="true">⌘</span>
+                <span class="category-copy"><strong>Software</strong><small>Code & control</small></span>
+                <span class="category-count" id="software-count">03</span>
+              </button>
+            </div>
+            <div class="sidebar-note"><span class="sidebar-spark">✳</span><p>One discipline informs the other. Some projects appear in both categories to highlight different contributions.</p></div>
+          </aside>
+
+          <div class="work-main">
+            <div class="category-heading">
+              <div><p class="category-kicker" id="category-kicker">MECHANISMS / PROTOTYPING / INTEGRATION</p><h3 id="category-title">Hardware Projects</h3><p id="category-description">Mechanical design, prototyping, and integration of robotic systems.</p></div>
+              <span class="project-total" id="project-total">04 PROJECTS</span>
+            </div>
+            <div class="project-grid" id="project-grid" aria-live="polite"></div>
+            <noscript><p class="no-script">Please enable JavaScript to view the project cards.</p></noscript>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-inner">
+        <div><p class="section-kicker">03 / CONNECT</p><h2 id="contact-heading">Let's build something<br><span class="gradient-text">meaningful.</span></h2><p>Interested in medical robotics, mechanical engineering, or collaborating on a project? I'd love to hear from you.</p></div>
+        <div class="contact-side"><a class="button button-primary" href="mailto:dmcdono7@jh.edu">Email me <span aria-hidden="true">↗</span></a><a href="https://github.com/douglasmcdonough" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://linkedin.com/in/dmcdonough2" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><span>© <span id="current-year">2026</span> Douglas McDonough</span><span>BUILT WITH CURIOSITY & CARE</span><a href="#top">Back to top ↑</a></div></footer>
+
+  <!-- A "View project" button opens this full-size project detail window. -->
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="detail-title">
+    <div class="dialog-shell">
+      <div class="dialog-header"><span id="detail-eyebrow">PROJECT DETAILS</span><button type="button" class="dialog-close" id="dialog-close" aria-label="Close project details">✕</button></div>
+      <div id="detail-content"></div>
+    </div>
+  </dialog>
 </body>
 </html>
