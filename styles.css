@@ -269,3 +269,25 @@ h1 { font-size: clamp(48px, 5.15vw, 75px); line-height: 1.08; letter-spacing: -.
   .project-dialog { max-height: 93dvh; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+
+/* Project image gallery and side-by-side playable demonstrations */
+.detail-gallery { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+.gallery-item { margin: 0; background: #172638; border: 1px solid #30475a; border-radius: 11px; overflow: hidden; min-width: 0; }
+.gallery-item a { display: block; background: #edf1f4; height: 185px; overflow: hidden; }
+.gallery-item a:hover img { transform: scale(1.025); }
+.gallery-item img { height: 100%; width: 100%; display: block; object-fit: contain; transition: transform .2s; }
+.gallery-item figcaption { padding: 10px 12px; font-size: 12px; color: #c0d4e0; display: flex; justify-content: space-between; gap: 8px; }
+.gallery-item figcaption span { color: var(--accent); }
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 285px), 1fr)); gap: 16px; align-items: start; }
+.video-item { min-width: 0; }
+.video-item[hidden] { display: none; }
+.media-caption { font-size: 12px; font-weight: 600; color: #c3dce8; margin: 0 0 8px; }
+.video-grid .detail-media { width: 100%; margin: 0; display: block; aspect-ratio: 16/9; object-fit: contain; background: #04070b; }
+.video-embed { aspect-ratio: 16/9; background: #04070b; border: 1px solid #3b5d68; border-radius: 11px; overflow: hidden; }
+.video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+.detail-cover img { object-fit: contain; background: #e9eff2; }
+@media (max-width: 540px) {
+  .detail-gallery { grid-template-columns: 1fr; }
+  .gallery-item a { height: 210px; }
+  .video-grid { grid-template-columns: 1fr; }
+}

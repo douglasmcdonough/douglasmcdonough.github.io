@@ -122,21 +122,81 @@
     list.innerHTML = docs.map(doc => `<a class="document-link" target="_blank" rel="noopener noreferrer" href="${safe(doc.file)}"><span aria-hidden="true">▤</span>${safe(doc.label)} ↗</a>`).join("");
   }
 
-  function attachVideo(project, root) {
+  // Local videos are shown only after the browser successfully reads their
+  // metadata. Files that have not been added yet do not leave broken players.
+  function attachVideos(project, root) {
     const section = root.querySelector("#detail-video-section");
-    if (!section || !project.video) return;
-    const video = document.createElement("video");
-    video.className = "detail-media";
-    video.controls = true;
-    video.playsInline = true;
-    video.preload = "metadata";
-    video.setAttribute("aria-label", `Video demonstration of ${project.title}`);
-    video.addEventListener("loadedmetadata", () => {
-      if (dialog.dataset.project === project.id) section.hidden = false;
+    const videoGrid = root.querySelector("#detail-video-grid");
+    if (!section || !videoGrid) return;
+
+    (project.videos || []).forEach(item => {
+      const tile = document.createElement("div");
+      tile.className = "video-item";
+      tile.hidden = true;
+      const caption = document.createElement("p");
+      caption.className = "media-caption";
+      caption.textContent = item.label;
+      const video = document.createElement("video");
+      video.className = "detail-media";
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+      video.setAttribute("aria-label", item.label);
+      if (item.poster) video.poster = item.poster;
+      video.addEventListener("loadedmetadata", () => {
+        if (dialog.dataset.project !== project.id) return;
+        tile.hidden = false;
+        section.hidden = false;
+      });
+      video.addEventListener("error", () => { tile.hidden = true; });
+      tile.append(caption, video);
+      videoGrid.appendChild(tile);
+      video.src = item.file;
     });
-    video.addEventListener("error", () => { section.hidden = true; });
-    section.appendChild(video);
-    video.src = project.video;
+
+    if (project.youtube?.id) {
+      const tile = document.createElement("div");
+      tile.className = "video-item";
+      const caption = document.createElement("p");
+      caption.className = "media-caption";
+      caption.textContent = project.youtube.label || "Video demonstration";
+      const wrapper = document.createElement("div");
+      wrapper.className = "video-embed";
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(project.youtube.id)}`;
+      iframe.title = project.youtube.label || "Project demonstration";
+      iframe.loading = "lazy";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      wrapper.appendChild(iframe);
+      tile.append(caption, wrapper);
+      videoGrid.appendChild(tile);
+      section.hidden = false;
+    }
+  }
+
+  function galleryMarkup(project) {
+    if (!project.gallery?.length) return "";
+    return `<section class="detail-section detail-gallery-section">
+      <h3 class="detail-heading">DESIGN &amp; PROJECT IMAGES</h3>
+      <div class="detail-gallery">${project.gallery.map(item => `
+        <figure class="gallery-item">
+          <a href="${safe(item.file)}" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: ${safe(item.label)}">
+            <img src="${safe(item.file)}" alt="${safe(item.label)}" loading="lazy">
+          </a>
+          <figcaption>${safe(item.label)} <span aria-hidden="true">↗</span></figcaption>
+        </figure>`).join("")}</div>
+      </section>`;
+  }
+
+  function externalLinksMarkup(project) {
+    if (!project.links?.length) return "";
+    return `<section class="detail-section">
+      <h3 class="detail-heading">PROJECT LINKS</h3>
+      <div class="document-list">${project.links.map(item => `
+        <a class="document-link" target="_blank" rel="noopener noreferrer" href="${safe(item.url)}"><span aria-hidden="true">↗</span>${safe(item.label)}</a>`).join("")}</div>
+      </section>`;
   }
 
   function openProject(projectId, button) {
@@ -153,11 +213,13 @@
       </div>
       ${coverMarkup(project, currentCategory, true)}
       ${project.highlights?.length ? `<section class="detail-section"><h3 class="detail-heading">PROJECT HIGHLIGHTS</h3><ul class="detail-highlights">${project.highlights.map(item => `<li>${safe(item)}</li>`).join("")}</ul></section>` : ""}
-      <section class="detail-section" id="detail-video-section" hidden><h3 class="detail-heading">PROJECT VIDEO</h3></section>
-      <section class="detail-section" id="detail-documents-section" hidden><h3 class="detail-heading">DRAWINGS & DOCUMENTATION</h3><div class="document-list" id="detail-documents"></div></section>`;
+      ${galleryMarkup(project)}
+      <section class="detail-section" id="detail-video-section" hidden><h3 class="detail-heading">VIDEO DEMONSTRATIONS</h3><div class="video-grid" id="detail-video-grid"></div></section>
+      <section class="detail-section" id="detail-documents-section" hidden><h3 class="detail-heading">DRAWINGS &amp; DOCUMENTATION</h3><div class="document-list" id="detail-documents"></div></section>
+      ${externalLinksMarkup(project)}`;
     startImageLoading(detailContent);
     dialog.showModal();
-    attachVideo(project, detailContent);
+    attachVideos(project, detailContent);
     attachDocuments(project, detailContent);
   }
 
@@ -186,7 +248,9 @@
   });
   dialog.addEventListener("close", () => {
     // Stop an uploaded video from continuing to play after closing.
-    detailContent.querySelector("video")?.pause();
+    detailContent.querySelectorAll("video").forEach(video => video.pause());
+    // Unload embedded players when the dialog closes.
+    detailContent.querySelectorAll("iframe").forEach(frame => { frame.src = "about:blank"; });
     lastFocusedButton?.focus();
   });
   window.addEventListener("hashchange", () => {
