@@ -1,64 +1,54 @@
 /*
-===============================================================
-  EASY EDITING FILE - projects.js
-===============================================================
-  Edit project titles, descriptions, highlights, and tags HERE.
-  You don't need to change index.html or app.js to edit a project.
+  PROJECTS.JS - THE ONLY FILE YOU NEED TO EDIT FOR PROJECT CONTENT
 
-  PHOTO: Save an image at the exact path listed in "image".
-         It appears automatically. JPG / PNG / WebP supported;
-         if using PNG, update .jpg below to .png.
-  VIDEO: Save an MP4 at the exact path listed in "video".
-         It appears automatically in the project details.
-  PDF:   Save the file at the path listed under "documents".
-         It appears automatically on the published website.
+  Change title, description, tags, and highlights between the quotes.
+  Photos/videos are shared between Hardware and Software when they describe
+  the same project. One file is enough for both cards.
 
-  To change a description, only change the words between quotes.
-  If your text includes an apostrophe, it's fine in these double quotes.
-  For a new highlight, add another quoted line within the [ ] list.
+  To add media: copy a JPG or MP4 into the exact 'image' or 'video' path.
+  Missing media does not create a broken image/video on the public website.
+  See TODAY_60_MIN_CHECKLIST.md for a short to-do list.
 
-  Feel free to leave projects short for now. There is no rush.
-===============================================================
+  Please confirm all descriptions and any public research media before posting.
 */
 
 const PORTFOLIO_PROJECTS = {
   hardware: [
     {
-      id: "da-vinci-hardware",
+      id: "robot-tool-hardware",
       number: "01",
-      title: "da Vinci Xi Tool Adapter & Motor Pack",
-      eyebrow: "Robotic tooling / mechanical design",
-      description: "Redesigned a modular tool adapter for an ARPA-H-funded partial nephrectomy project, integrating da Vinci Xi surgical instruments with a Universal Robots UR5 arm.",
-      image: "assets/images/hardware-da-vinci-xi-adapter.jpg",
-      // If your original davinci_adapter.jpg is still in the repository root,
-      // it will be used until you add the new photo above.
+      title: "Robot Tool Adapter & Motor Pack",
+      eyebrow: "Mechatronics / robotic tooling",
+      description: "Designed a modular motorized adapter to interface da Vinci Xi instruments with a UR5 robot, combining mechanical coupling, actuation, and software control for a robotics research platform.",
+      image: "assets/images/robot-tool-adapter.jpg",
+      // The original CAD image is already included; no new file is required.
       fallbackImage: "davinci_adapter.jpg",
-      video: "assets/videos/hardware-da-vinci-xi-adapter.mp4",
-      imageAlt: "da Vinci Xi tool adapter and motor pack",
-      tags: ["SolidWorks", "UR5", "Dynamixel"],
+      video: "assets/videos/robot-tool-adapter-demo.mp4",
+      imageAlt: "CAD model of a motorized robot tool adapter with coupled shafts and instrument interface",
+      tags: ["SolidWorks", "UR5", "Dynamixel", "Mechatronics"],
       highlights: [
-        "Actuation: Incorporated Dynamixel XC330-M288-T motors for current-based position control and automatic homing.",
-        "Tool engagement: Used 3 mm-stroke spring plungers and D-profile shaft cuts for secure, fast instrument attachment.",
-        "Retention: Added snap clips and star knobs to maintain precise surgical tool-tip positioning during teleoperation.",
-        "ROS 2 integration: Developed current-based homing and joystick teleoperation with custom coupling matrices."
+        "Actuation: Integrated Dynamixel XC330-M288-T motors for current-based position control and homing.",
+        "Tool engagement: Used 3 mm-stroke spring plungers and D-profile shafts to enable tool attachment.",
+        "Retention: Added snap clips and star knobs to secure instrument positioning during teleoperation.",
+        "Hardware-software integration: Connected the adapter to ROS 2 control and custom coupling matrices."
       ],
       documents: [
-        { label: "Outer shaft drawing (metric)", file: "Outer_shaft_Drawing_metric.pdf" },
-        { label: "Inner shaft drawing (metric)", file: "Inner_shaft_Drawing_metric.pdf" },
+        { label: "Outer shaft drawing", file: "Outer_shaft_Drawing_metric.pdf" },
+        { label: "Inner shaft drawing", file: "Inner_shaft_Drawing_metric.pdf" },
         { label: "Project presentation", file: "presentation.pdf" }
       ]
     },
     {
       id: "three-arm-hardware",
       number: "02",
-      title: "Three-Arm Laparoscopic System",
-      eyebrow: "Minimally invasive robotics",
-      description: "A three-arm laparoscopic minimally invasive robotics system, with a hardware focus on physical architecture and integration.",
-      image: "assets/images/hardware-three-arm-laparoscopic.jpg",
-      video: "assets/videos/hardware-three-arm-laparoscopic.mp4",
-      imageAlt: "Three-arm laparoscopic minimally invasive robotic system",
-      tags: ["Robotics", "System integration"],
-      // You can add your engineering achievements in highlights later.
+      title: "Three-Arm Robotic System",
+      eyebrow: "Multi-arm robotics / integration",
+      description: "A three-arm robot platform for laparoscopic manipulation, viewed through the lens of mechanical architecture and robotic system integration.",
+      image: "assets/images/three-arm-robot.jpg",
+      video: "assets/videos/three-arm-robot-demo.mp4",
+      imageAlt: "Three-arm robotic system for laparoscopic manipulation",
+      tags: ["Multi-arm robotics", "System integration"],
+      // Replace with your exact role, integration approach, and one result.
       highlights: [],
       documents: [
         { label: "Project documentation", file: "assets/pdfs/hardware-three-arm-laparoscopic.pdf" }
@@ -67,14 +57,14 @@ const PORTFOLIO_PROJECTS = {
     {
       id: "continuum-probe",
       number: "03",
-      title: "Continuum Probe End Effector",
-      eyebrow: "Mechanisms / end-effector design",
-      description: "A continuum-probe end effector for robotic applications, centered on mechanism design and compact, flexible tooling.",
-      image: "assets/images/hardware-continuum-probe.jpg",
-      video: "assets/videos/hardware-continuum-probe.mp4",
-      imageAlt: "Continuum probe end-effector prototype",
-      tags: ["Mechanism design", "Prototyping"],
-      // Add mechanism, fabrication, and validation details when ready.
+      title: "Continuum Robot End Effector",
+      eyebrow: "Robot mechanisms / end effectors",
+      description: "A continuum-probe end effector exploring compact mechanical design and flexible motion for robotic manipulation.",
+      image: "assets/images/continuum-end-effector.jpg",
+      video: "assets/videos/continuum-end-effector-demo.mp4",
+      imageAlt: "Continuum-probe robotic end-effector prototype",
+      tags: ["Mechanism design", "End effectors", "Prototyping"],
+      // Replace with your mechanism type, fabrication approach, and tests.
       highlights: [],
       documents: [
         { label: "Project documentation", file: "assets/pdfs/hardware-continuum-probe.pdf" }
@@ -83,14 +73,14 @@ const PORTFOLIO_PROJECTS = {
     {
       id: "lithography",
       number: "04",
-      title: "Lithography",
-      eyebrow: "Fabrication / microengineering",
-      description: "A lithography-focused fabrication project exploring processes and structures at small scales.",
-      image: "assets/images/hardware-lithography.jpg",
-      video: "assets/videos/hardware-lithography.mp4",
-      imageAlt: "Lithography process and fabricated features",
-      tags: ["Lithography", "Fabrication"],
-      // Add fabrication methods, materials, and outcomes when ready.
+      title: "Microfabrication & Lithography",
+      eyebrow: "Precision fabrication / prototyping",
+      description: "Hands-on lithography work focused on small-scale fabrication processes and precision engineering.",
+      image: "assets/images/lithography.jpg",
+      video: "assets/videos/lithography-demo.mp4",
+      imageAlt: "Lithography fabrication process or completed microfabricated features",
+      tags: ["Lithography", "Microfabrication"],
+      // Replace with the process, material, and a measurable outcome.
       highlights: [],
       documents: [
         { label: "Project documentation", file: "assets/pdfs/hardware-lithography.pdf" }
@@ -100,19 +90,37 @@ const PORTFOLIO_PROJECTS = {
 
   software: [
     {
-      id: "da-vinci-software",
+      id: "ur5-visual-servoing",
       number: "01",
-      title: "da Vinci Xi Tool Adapter Control",
-      eyebrow: "ROS 2 / robotic control",
-      description: "Developed ROS 2 control functionality for the da Vinci Xi tool adapter, including current-based homing and joystick teleoperation using custom coupling matrices.",
-      image: "assets/images/software-da-vinci-xi-control.jpg",
-      video: "assets/videos/software-da-vinci-xi-control.mp4",
-      imageAlt: "Software control and testing for the da Vinci Xi tool adapter",
-      tags: ["ROS 2", "Teleoperation", "Dynamixel"],
+      title: "UR5 Vision-Guided Control",
+      eyebrow: "Computer vision / feedback control",
+      description: "A UR5 visual-servoing project linking camera feedback to robot motion, demonstrating the connection between perception and closed-loop control.",
+      image: "assets/images/ur5-visual-servoing.jpg",
+      video: "assets/videos/ur5-visual-servoing-demo.mp4",
+      imageAlt: "UR5 robotic arm in a camera-guided visual servoing setup",
+      tags: ["UR5", "Visual servoing", "Computer vision"],
+      // Add your perception algorithm, control approach, and actual results.
+      highlights: [],
+      documents: [
+        { label: "Project documentation", file: "assets/pdfs/software-ur5-visual-servoing.pdf" }
+      ]
+    },
+    {
+      id: "robot-tool-software",
+      number: "02",
+      title: "ROS 2 Robot Tool Control",
+      eyebrow: "ROS 2 / motor control / teleoperation",
+      description: "Built ROS 2 control functionality for a motorized robotic tool adapter, including current-based homing and joystick teleoperation using custom coupling matrices.",
+      // One CAD image and one demo video also appear on the hardware card.
+      image: "assets/images/robot-tool-adapter.jpg",
+      fallbackImage: "davinci_adapter.jpg",
+      video: "assets/videos/robot-tool-adapter-demo.mp4",
+      imageAlt: "CAD model of robot tool adapter used in ROS 2 motor control experiments",
+      tags: ["ROS 2", "Teleoperation", "Dynamixel", "Control"],
       highlights: [
-        "Built current-based homing functionality for the instrument actuation system.",
-        "Implemented joystick teleoperation with custom coupling matrices.",
-        "Integrated control of Dynamixel XC330-M288-T motors with the physical tool adapter."
+        "Implemented current-based motor homing for the tool actuation system.",
+        "Developed joystick teleoperation using custom joint-to-motor coupling matrices.",
+        "Integrated Dynamixel motor commands with the physical robotic adapter."
       ],
       documents: [
         { label: "Project presentation", file: "presentation.pdf" },
@@ -121,34 +129,18 @@ const PORTFOLIO_PROJECTS = {
     },
     {
       id: "three-arm-software",
-      number: "02",
-      title: "Three-Arm Laparoscopic System",
-      eyebrow: "Robotics software / integration",
-      description: "Software for a three-arm laparoscopic minimally invasive robotics system, focused on coordinated robotic operation and system integration.",
-      image: "assets/images/software-three-arm-laparoscopic.jpg",
-      video: "assets/videos/software-three-arm-laparoscopic.mp4",
-      imageAlt: "Software and control setup for the three-arm laparoscopic system",
-      tags: ["Robotic systems", "Software integration"],
-      // Add the software stack, your contributions, and results when ready.
+      number: "03",
+      title: "Three-Arm Robot Software",
+      eyebrow: "Multi-arm control / integration",
+      description: "Software and coordinated operation for a three-arm laparoscopic robot system, emphasizing the challenges of bringing multiple robotic components together.",
+      image: "assets/images/three-arm-robot.jpg",
+      video: "assets/videos/three-arm-robot-demo.mp4",
+      imageAlt: "Three-arm robotic system and its software control setup",
+      tags: ["Robotics software", "System integration"],
+      // Replace with the actual architecture, control stack, and your role.
       highlights: [],
       documents: [
         { label: "Software documentation", file: "assets/pdfs/software-three-arm-laparoscopic.pdf" }
-      ]
-    },
-    {
-      id: "ur5-visual-servoing",
-      number: "03",
-      title: "UR5 Visual Servoing",
-      eyebrow: "Vision-guided robotic control",
-      description: "Visual servoing with a UR5 robotic arm, connecting camera-based feedback with robot motion control.",
-      image: "assets/images/software-ur5-visual-servoing.jpg",
-      video: "assets/videos/software-ur5-visual-servoing.mp4",
-      imageAlt: "UR5 robotic arm visual servoing experiment",
-      tags: ["UR5", "Computer vision", "Control"],
-      // Add the vision method, control loop, and accuracy results when ready.
-      highlights: [],
-      documents: [
-        { label: "Software documentation", file: "assets/pdfs/software-ur5-visual-servoing.pdf" }
       ]
     }
   ]

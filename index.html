@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#080e1a">
-  <meta name="description" content="Douglas McDonough — engineering portfolio featuring medical robotics, mechanical design, robotic control, and software projects.">
-  <title>Douglas McDonough | Medical Robotics Engineer</title>
+  <meta name="description" content="Douglas McDonough — robotics and mechatronics portfolio featuring robot design, ROS 2 control, computer vision, and system integration.">
+  <title>Douglas McDonough | Robotics &amp; Mechatronics Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
     <div class="container nav-content">
       <a href="#top" class="brand" aria-label="Douglas McDonough home">
         <span class="brand-monogram">DM<span class="brand-period">.</span></span>
-        <span class="brand-name">DOUGLAS <strong>MCDONOUGH</strong><span class="brand-descriptor">ENGINEERING PORTFOLIO</span></span>
+        <span class="brand-name">DOUGLAS <strong>MCDONOUGH</strong><span class="brand-descriptor">ROBOTICS &amp; MECHATRONICS</span></span>
       </a>
       <nav class="primary-nav" aria-label="Main navigation">
         <a href="#projects">Projects</a>
@@ -35,18 +35,24 @@
     <!-- EDIT YOUR INTRODUCTION HERE. All PROJECT text is in projects.js. -->
     <section class="hero container" id="about" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="pulse-dot"></span> MECHANICAL ENGINEERING / MEDICAL ROBOTICS</div>
+        <div class="eyebrow"><span class="pulse-dot"></span> ROBOTICS / MECHATRONICS / CONTROL</div>
         <p class="hero-intro">Hi, I'm Douglas McDonough.</p>
-        <h1 id="hero-title">Building robotics<br>from <span class="gradient-text">mechanism</span><br>to <span class="gradient-text">motion.</span></h1>
-        <p class="hero-description">I'm an MSE student in Mechanical Engineering at Johns Hopkins University, specializing in medical robotics. My research supports an ARPA-H-funded effort in supervised autonomous robotic renal tumor resection — spanning custom robotic adapters and deep learning for imitation learning.</p>
+        <h1 id="hero-title">Building robots<br>from <span class="gradient-text">mechanism</span><br>to <span class="gradient-text">motion.</span></h1>
+        <p class="hero-description">I'm a Mechanical Engineering MSE student at Johns Hopkins University working across robotic mechanism design, actuation, controls, and computer vision. My projects connect hardware and software, from vision-guided UR5 motion to custom robotic tooling for research.</p>
+        <ul class="focus-tags" aria-label="Robotics focus areas">
+          <li>Robot mechanisms</li>
+          <li>ROS 2 &amp; control</li>
+          <li>Computer vision</li>
+          <li>System integration</li>
+        </ul>
         <div class="hero-actions">
           <a class="button button-primary" href="#projects">Explore projects <span aria-hidden="true">↘</span></a>
-          <a class="button button-outline" href="mailto:dmcdono7@jh.edu">Get in touch <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="#software" data-jump-category="software">See software work <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="hero-micro"><span class="micro-line"></span> DESIGN  <span class="micro-separator">/</span>  BUILD  <span class="micro-separator">/</span>  CONTROL</div>
+        <div class="hero-micro"><span class="micro-line"></span> DESIGN  <span class="micro-separator">/</span>  CONTROL  <span class="micro-separator">/</span>  PERCEPTION</div>
       </div>
       <aside class="hero-visual" aria-label="Engineering focus overview">
-        <div class="visual-topline"><span>FIELD NOTES // 001</span><span class="corner-mark">＋</span></div>
+        <div class="visual-topline"><span>ROBOTICS / FIELD NOTES</span><span class="corner-mark">＋</span></div>
         <div class="schematic" aria-hidden="true">
           <div class="schematic-grid"></div>
           <div class="orbit orbit-one"></div>
@@ -57,11 +63,11 @@
           <div class="schematic-center"><span>H</span><span class="schematic-mid">↔</span><span>S</span></div>
           <div class="schematic-caption caption-left">HARDWARE</div>
           <div class="schematic-caption caption-right">SOFTWARE</div>
-          <div class="schematic-coordinate">X: 004.02<br>Y: 003.07</div>
+          <div class="schematic-coordinate">MECHATRONICS<br>CONTROL / VISION</div>
         </div>
         <div class="visual-bottom">
-          <div><span class="field-label">CURRENT FOCUS</span><strong>Medical robotics</strong></div>
-          <div><span class="field-label">EDUCATION</span><strong>Johns Hopkins · MSE</strong></div>
+          <div><span class="field-label">CURRENT FOCUS</span><strong>Robotic systems &amp; controls</strong></div>
+          <div><span class="field-label">EDUCATION</span><strong>Johns Hopkins · MSE 2027</strong></div>
         </div>
       </aside>
     </section>
@@ -70,7 +76,7 @@
       <div class="container work-container">
         <div class="section-prelude">
           <div><p class="section-kicker">02 / SELECTED WORK</p><h2 id="work-heading">Project portfolio<span class="brand-period">.</span></h2></div>
-          <p>Explore the physical systems and the software behind them. Select a category to switch projects.</p>
+          <p>From robotic mechanisms and actuation to feedback control and perception. Browse the hardware and software behind the systems.</p>
         </div>
 
         <div class="work-layout">
@@ -88,12 +94,12 @@
                 <span class="category-count" id="software-count">03</span>
               </button>
             </div>
-            <div class="sidebar-note"><span class="sidebar-spark">✳</span><p>One discipline informs the other. Some projects appear in both categories to highlight different contributions.</p></div>
+            <div class="sidebar-note"><span class="sidebar-spark">✳</span><p>The same robot can involve both a mechanism and a control stack. Shared projects show each side of the work.</p></div>
           </aside>
 
           <div class="work-main">
             <div class="category-heading">
-              <div><p class="category-kicker" id="category-kicker">MECHANISMS / PROTOTYPING / INTEGRATION</p><h3 id="category-title">Hardware Projects</h3><p id="category-description">Mechanical design, prototyping, and integration of robotic systems.</p></div>
+              <div><p class="category-kicker" id="category-kicker">MECHANISMS / PROTOTYPING / INTEGRATION</p><h3 id="category-title">Hardware Projects</h3><p id="category-description">Mechanisms, actuation, prototyping, and robot integration.</p></div>
               <span class="project-total" id="project-total">04 PROJECTS</span>
             </div>
             <div class="project-grid" id="project-grid" aria-live="polite"></div>
@@ -105,7 +111,7 @@
 
     <section class="contact-section" id="contact" aria-labelledby="contact-heading">
       <div class="container contact-inner">
-        <div><p class="section-kicker">03 / CONNECT</p><h2 id="contact-heading">Let's build something<br><span class="gradient-text">meaningful.</span></h2><p>Interested in medical robotics, mechanical engineering, or collaborating on a project? I'd love to hear from you.</p></div>
+        <div><p class="section-kicker">03 / CONNECT</p><h2 id="contact-heading">Let's build something<br><span class="gradient-text">meaningful.</span></h2><p>Interested in robotics, mechatronics, perception, or controls? I'd love to connect.</p></div>
         <div class="contact-side"><a class="button button-primary" href="mailto:dmcdono7@jh.edu">Email me <span aria-hidden="true">↗</span></a><a href="https://github.com/douglasmcdonough" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://linkedin.com/in/dmcdonough2" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>

@@ -9,12 +9,12 @@
     hardware: {
       title: "Hardware Projects",
       kicker: "MECHANISMS / PROTOTYPING / INTEGRATION",
-      description: "Mechanical design, prototyping, and integration of robotic systems."
+      description: "Mechanisms, actuation, prototyping, and robot integration."
     },
     software: {
       title: "Software Projects",
       kicker: "CONTROL / VISION / ROBOTICS SOFTWARE",
-      description: "Robotic control, software integration, and vision-guided motion."
+      description: "Visual servoing, ROS 2, teleoperation, and feedback control."
     }
   };
 
@@ -39,8 +39,8 @@
         ${detail ? "" : `<span class="cover-top-label">${labelFor(category)} / ${safe(project.number)}</span>`}
         <div class="cover-placeholder" aria-hidden="true">
           <span class="cover-icon">${category === "hardware" ? "▧" : "⌘"}</span>
-          <span class="cover-label">PROJECT IMAGE</span>
-          <span class="cover-small">Photo coming soon</span>
+          <span class="cover-label">${safe(project.eyebrow.toUpperCase())}</span>
+          <span class="cover-small">PROJECT / ${safe(project.number)}</span>
         </div>
         <img data-src="${safe(project.image)}" data-fallback="${safe(project.fallbackImage || "")}" alt="${safe(project.imageAlt || project.title)}" loading="lazy">
       </div>`;
@@ -165,6 +165,14 @@
     button.addEventListener("click", () => {
       showCategory(button.dataset.category, true);
       // Clicking between the categories is like navigating within Projects.
+      document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+  // Hero shortcut selects Software before scrolling to the project list.
+  document.querySelectorAll("[data-jump-category]").forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      showCategory(link.dataset.jumpCategory, true);
       document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
     });
   });

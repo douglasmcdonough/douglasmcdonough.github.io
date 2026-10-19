@@ -53,7 +53,9 @@ h1, h2, h3, h4, p { margin-top: 0; }
 h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
 h1 { font-size: clamp(48px, 5.15vw, 75px); line-height: 1.08; letter-spacing: -.063em; font-weight: 700; margin-bottom: 26px; }
 .gradient-text { background: linear-gradient(125deg, #83eae8, #a3f5c2); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.hero-description { max-width: 605px; font-size: 15px; line-height: 1.94; color: var(--muted); margin-bottom: 29px; }
+.hero-description { max-width: 605px; font-size: 15px; line-height: 1.94; color: var(--muted); margin-bottom: 20px; }
+.focus-tags { list-style: none; margin: 0 0 30px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.focus-tags li { border: 1px solid #2a5360; color: #bee9e3; background: #122a34; border-radius: 6px; padding: 6px 10px; font-size: 11px; font-weight: 600; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 25px; border-radius: 10px; padding: 12px 19px; min-height: 49px; font-weight: 700; font-size: 13px; transition: transform .2s, background .2s, border-color .2s; }
 .button:hover { transform: translateY(-2px); }
@@ -61,7 +63,7 @@ h1 { font-size: clamp(48px, 5.15vw, 75px); line-height: 1.08; letter-spacing: -.
 .button-primary:hover { background: #c6fff2; }
 .button-outline { border: 1px solid #34485b; background: #15233576; }
 .button-outline:hover { border-color: #7dcdd1; background: #1a3140; }
-.hero-micro { color: #71879a; display: flex; align-items: center; gap: 11px; font-size: 10px; margin-top: 45px; }
+.hero-micro { color: #71879a; display: flex; align-items: center; gap: 11px; font-size: 10px; margin-top: 36px; }
 .micro-line { width: 30px; height: 1px; background: #668394; margin-right: 4px; }
 .micro-separator { color: #365163; }
 .hero-visual { position: relative; background: linear-gradient(155deg, #14293b, #0d1827 62%); border: 1px solid #304454; border-radius: 18px; min-height: 465px; padding: 21px 25px 22px; box-shadow: 0 32px 90px #0006, inset 0 1px #a5f1fa1e; overflow: hidden; }
@@ -134,7 +136,7 @@ h1 { font-size: clamp(48px, 5.15vw, 75px); line-height: 1.08; letter-spacing: -.
 .project-cover.is-loaded img { opacity: 1; }
 .cover-placeholder { display: flex; flex-direction: column; align-items: center; gap: 8px; position: relative; z-index: 2; text-align: center; }
 .cover-icon { width: 50px; height: 50px; border: 1px solid #5aa7ae; background: #12374078; color: #a9e5e5; display: grid; place-items: center; border-radius: 15px; font-size: 23px; font-family: 'Space Grotesk', sans-serif; }
-.cover-label { font-size: 9px; font-weight: 700; color: #acd4da; }
+.cover-label { max-width: 82%; font-size: 9px; font-weight: 700; color: #acd4da; letter-spacing: .08em; line-height: 1.5; }
 .cover-small { font-size: 10px; color: #709fae; }
 .project-cover.is-loaded .cover-placeholder { opacity: 0; }
 .cover-top-label { position: absolute; top: 18px; left: 18px; font: 700 10px 'Space Grotesk', sans-serif; letter-spacing: .12em; z-index: 5; background: #071a23bb; border: 1px solid #ffffff22; border-radius: 6px; padding: 7px 10px; color: #daf4f0; }
@@ -235,6 +237,8 @@ h1 { font-size: clamp(48px, 5.15vw, 75px); line-height: 1.08; letter-spacing: -.
   .hero-intro { font-size: 16px; margin-top: 24px; }
   h1 { font-size: clamp(43px, 10vw, 59px); }
   .hero-description { font-size: 14px; }
+  .focus-tags { gap: 6px; }
+  .focus-tags li { font-size: 10px; padding: 5px 8px; }
   .button { padding: 11px 14px; gap: 17px; }
   .hero-micro { margin-top: 34px; font-size: 9px; }
   .hero-visual { min-height: 337px; }
